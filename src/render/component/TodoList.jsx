@@ -15,16 +15,16 @@ export default class TodoList extends Component{
     return (
       <ul>
         {
-          this.props.todos.map(function(todo,index){
+          this.props.todos.map(function(todo,i){
             if(todo.status == 0){
               return (
-                <li key={index}>
+                <li key={i}>
                   <input  type="checkbox" 
-                          onClick={this._onDelete.bind(this, index)}/>{todo.item}, {index}
+                          onClick={this._onDelete.bind(this, i)}/>{todo.item}, {i}
                 </li>
               )
             }else{
-              return <li><s>{todo.item}</s></li>
+              return <li key={i}><s>{todo.item}</s></li>
             }
           },this)
         }
