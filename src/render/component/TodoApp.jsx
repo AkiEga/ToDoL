@@ -28,6 +28,5 @@ export default class TodoApp extends Component{
           <TodoList todos={this.state.todos} onDelete={this.onDelete.bind(this)}/>
         </div>
       );
-      //return (<p>test</p>);
     }
 }
