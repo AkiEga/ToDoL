@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": ".tmp/main/index.js",
   "scripts": {
+    "clean": "rm .tmp/* -r -f",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "electron .",
@@ -12,6 +13,7 @@
   "description": "To do list for me",
   "dependencies": {
     "@atlassian/aui": "^6.0.6",
+    "aui-react": "0.0.5",
     "babel": "^6.23.0",
     "electron": "^1.6.1",
     "moment": "^2.18.1",
@@ -32,6 +34,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "escape-string-regexp": "^1.0.5",
+    "jquery": "^3.2.1",
     "strip-ansi": "^3.0.1",
     "supports-color": "^3.2.3",
     "webpack": "^2.6.1"

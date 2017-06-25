@@ -21,10 +21,8 @@ export default class TodoList extends Component {
                 <details key={i}>
                   <summary>{todo.item.title}</summary>
                   <li>
-                    <input 
-                      type="checkbox"
-                      onClick={this._onDelete.bind(this, i)} />
-                      ID: {i}, Title: {todo.item.title}, Date: {todo.item.date}
+                    <input type="checkbox" onClick={this._onDelete.bind(this, i)} />                      
+                    <span>ID: {i}, Title: {todo.item.title}, Date: {todo.item.date}</span>                      
                   </li>
                 </details>
               )
