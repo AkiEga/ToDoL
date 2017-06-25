@@ -7,6 +7,7 @@ function createWindow() {
         height: 600 
     });
     win. loadURL(`file://${__dirname}/../../index.html `); 
+    //mainWindow.webContents.openDevTools();
     win. on("closed", () => { 
         win = null; 
     }); 
