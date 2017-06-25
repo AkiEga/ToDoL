@@ -7,12 +7,15 @@
     "watch": "webpack --watch",
     "start": "electron .",
     "eslint": "eslint \"src/**/*.{js,jsx}\"",
-    "lint": "npm run eslint; stylelint src/**/*.css"    
+    "lint": "npm run eslint; stylelint src/**/*.css"
   },
   "description": "To do list for me",
   "dependencies": {
+    "@atlassian/aui": "^6.0.6",
     "babel": "^6.23.0",
     "electron": "^1.6.1",
+    "moment": "^2.18.1",
+    "picnic": "^6.4.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },

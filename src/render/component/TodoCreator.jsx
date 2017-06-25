@@ -47,7 +47,7 @@ export default class TodoCreator extends Component {
                         placeholder="Title" 
                         onChange={this._onChangeField.bind(this)}
                         />
-                    <input
+                    <input 
                         id='date'  
                         type="date" 
                         name="date" 
