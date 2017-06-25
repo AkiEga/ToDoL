@@ -1,16 +1,26 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Component} from 'react';
+import moment from 'moment';
 
 export default class TodoCreator extends Component {
     constructor(props, context, updater){
         super(props, context, updater);
-        
         this.state = {
             title: undefined,
             date: undefined,
             label: undefined
         };
+    }
+    _today(){        
+        var today = moment().format("YYYY-MM-DD")
+        this.setState({
+            title: this.state.title, 
+            date: today
+        });
+        console.log(today);
+
+        return today;
     }
     _onAdd(){
         this.props.onAdd({
@@ -19,7 +29,7 @@ export default class TodoCreator extends Component {
         });
         this.setState({ 
             title: "", 
-            date: "" 
+            date: ""
         });
     }
     _onChangeField(e) {
