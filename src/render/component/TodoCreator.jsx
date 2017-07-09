@@ -23,6 +23,8 @@ export default class TodoCreator extends Component {
             date: undefined,
             label: undefined
         };
+        console.log("TodoCreator is constructed.");
+        console.log(this.state);
     }
     _onAdd(){
         this.props.onAdd({

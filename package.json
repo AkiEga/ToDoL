@@ -33,9 +33,12 @@
     "babel-preset-react": "*",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "css-loader": "^0.28.4",
     "escape-string-regexp": "^1.0.5",
     "jquery": "^3.2.1",
+    "react-css-modules": "^4.5.2",
     "strip-ansi": "^3.0.1",
+    "style-loader": "^0.18.2",
     "supports-color": "^3.2.3",
     "webpack": "^2.6.1"
   },

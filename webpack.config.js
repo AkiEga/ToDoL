@@ -1,7 +1,7 @@
 module.exports = {
     target: "electron",
     node: { __dirname: false, __filename: false },
-    resolve: { extensions: [".js", ".jsx"] },
+    resolve: { extensions: [".js", ".jsx", ".css"] },
     module: { 
         rules: [ 
             { 
@@ -11,10 +11,7 @@ module.exports = {
             }, 
             { 
                 test: /\.css$/, 
-                loaders: [ 
-                    "style-loader", 
-                    "css-loader? modules" 
-                ] 
+                loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
             } 
         ] 
     }, 

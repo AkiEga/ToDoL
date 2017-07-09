@@ -32,6 +32,8 @@
             "sourceMapPathOverrides": {
                 "webpack:///*": "${webRoot}/*"
             }
-        }
+        },
+        
+
     ]
 }
