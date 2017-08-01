@@ -2,7 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Component} from 'react';
 import moment from 'moment';
-import AUILabel from 'aui-react/lib/AUILabel'
+import AUILabel from 'aui-react/lib/AUILabel';
+import storage from 'electron-json-storage';
+import fs from 'fs';
 
 function today(){
     var today = moment().format("YYYY-MM-DD");
@@ -23,10 +25,33 @@ export default class TodoCreator extends Component {
             date: undefined,
             label: undefined
         };
-        console.log("TodoCreator is constructed.");
+        console.log("TodoCreator is importructed.");
         console.log(this.state);
     }
     _onAdd(){
+        let root_path="C:/work/repo/ToDoL/tasks/";
+        let tar_dir_path = root_path + this.state.title;
+        // create dir for this task
+        if (!fs.existsSync(tar_dir_path)){
+            fs.mkdirSync(tar_dir_path);
+        }
+        // create configure file for this task
+        let save_file_path = tar_dir_path + "/config.json";
+        let this_task_json=JSON.stringify({
+            title: this.state.title,
+            date: this.state.date
+        })
+        if(fs.exists(save_file_path) != true){
+            fs.writeFile(save_file_path, this_task_json, 'utf8', function (err) {
+                if (err) {
+                    console.log("Error was occured in saving "+save_file_path + ".");
+                    return console.log(err);
+                }else{
+                    console.log(save_file_path + "is saved.");
+                }
+            });        
+        }
+
         this.props.onAdd({
             title: this.state.title,
             date: this.state.date
